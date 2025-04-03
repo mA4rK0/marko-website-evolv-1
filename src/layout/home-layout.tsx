@@ -9,7 +9,7 @@ const HomeLayout: React.FC = () => {
   const [showButton, setShowButton] = useState(false);
 
   return (
-    <div className="relative flex justify-center items-center min-h-screen bg-[#080808]">
+    <div id="home" className="relative flex justify-center items-center min-h-screen bg-[#080808] overflow-hidden">
       {/* <div className="absolute inset-x-0 z-10 top-0 h-7 bg-gradient-to-b from-white/20 to-transparent"></div> */}
       <div className="absolute inset-x-0 z-10 bottom-0 h-7 bg-gradient-to-t from-white/20 to-transparent"></div>
       {showButton && (
