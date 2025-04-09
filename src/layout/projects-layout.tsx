@@ -1,10 +1,51 @@
+"use client";
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import ProjectsTextEffect from "@/components/typingEffects/project_section_des";
+import fireBlow from "../../public/fireBlow.json";
+
 const ProjectsLayout: React.FC = () => {
+  const [hideElement, setHideElement] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setHideElement(scrollY > 667);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative w-full min-h-screen bg-[#080808]">
-      <div className="absolute inset-x-0 z-10 top-0 h-7 bg-gradient-to-b from-red-500/20 to-transparent"></div>
-      <h1 id="projects" className="text-white">
-        Projects
-      </h1>
+      <div
+        className={`absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-red-600/20 to-transparent
+        transition-opacity duration-500 ease-in-out ${hideElement ? "opacity-0" : "opacity-100"}`}
+      ></div>
+      <div
+        className={`absolute left-0 top-0 h-full w-7 bg-gradient-to-r from-red-600/20 to-transparent
+        transition-opacity duration-500 ease-in-out ${!hideElement ? "opacity-0" : "opacity-100"}`}
+      ></div>
+      <div
+        className={`absolute right-0 top-0 h-full w-7 bg-gradient-to-l from-red-600/20 to-transparent
+        transition-opacity duration-500 ease-in-out ${!hideElement ? "opacity-0" : "opacity-100"}`}
+      ></div>
+      {hideElement && (
+        <>
+          <div className="relative">
+            <div id="projects" className="flex justify-center">
+              <h1 className="text-red-600 text-4xl md:text-5xl mt-8 md:mt-14 font-bold">Projects</h1>
+            </div>
+            <div>
+              <Lottie animationData={fireBlow} loop={false} className="absolute bottom-5 left-[35rem] w-[25rem]" />
+            </div>
+            <div className="flex justify-center mt-7 w-[15rem] mx-auto md:mx-0 md:w-full text-center text-lg md:text-xl">
+              <ProjectsTextEffect />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

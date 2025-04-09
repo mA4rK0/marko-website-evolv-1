@@ -82,7 +82,7 @@ export default function NavbarLayout() {
             exit="exit"
             className="flex flex-col py-5 fixed right-2 top-16 w-full max-w-[250px] z-20 text-white bg-[#383838]/50 backdrop-blur-md shadow-lg shadow-black rounded-lg transition ease-in-out duration-300"
           >
-            {["Home", "Projects", "About", "Skill", "Contact"].map((item, i) => (
+            {["Home", "Projects", "About", "Skills", "Contact"].map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
