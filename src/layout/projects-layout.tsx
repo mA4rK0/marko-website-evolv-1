@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import ProjectsTextEffect from "@/components/typingEffects/project_section_des";
-import fireBlow from "../../public/fireBlow.json";
+// import fireBlow from "../../public/fireBlow.json";
 
 const ProjectsLayout: React.FC = () => {
   const [hideElement, setHideElement] = useState(false);
@@ -37,9 +37,9 @@ const ProjectsLayout: React.FC = () => {
             <div className="flex justify-center">
               <h1 className="text-red-600 text-4xl md:text-5xl mt-8 md:mt-14 font-bold">Projects</h1>
             </div>
-            <div>
+            {/* <div>
               <Lottie animationData={fireBlow} loop={false} className="absolute bottom-5 left-[35rem] w-[25rem]" />
-            </div>
+            </div> */}
             <div className="flex justify-center mt-7 w-[15rem] mx-auto md:mx-0 md:w-full text-center text-lg md:text-xl">
               <ProjectsTextEffect />
             </div>
