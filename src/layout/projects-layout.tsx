@@ -18,7 +18,7 @@ const ProjectsLayout: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen bg-[#080808]">
+    <div id="projects" className="relative w-full min-h-screen bg-[#080808]">
       <div
         className={`absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-red-600/20 to-transparent
         transition-opacity duration-500 ease-in-out ${hideElement ? "opacity-0" : "opacity-100"}`}
@@ -34,7 +34,7 @@ const ProjectsLayout: React.FC = () => {
       {hideElement && (
         <>
           <div className="relative">
-            <div id="projects" className="flex justify-center">
+            <div className="flex justify-center">
               <h1 className="text-red-600 text-4xl md:text-5xl mt-8 md:mt-14 font-bold">Projects</h1>
             </div>
             <div>
