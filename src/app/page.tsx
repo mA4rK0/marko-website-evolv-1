@@ -1,5 +1,11 @@
+"use client";
+
 import HomeLayout from "@/layout/home-layout";
-import ProjectsLayout from "@/layout/projects-layout";
+import dynamic from "next/dynamic";
+
+const ProjectsLayout = dynamic(() => import("@/layout/projects-layout"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
