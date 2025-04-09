@@ -35,7 +35,7 @@ const ProjectsLayout: React.FC = () => {
         <>
           <div className="relative">
             <div className="flex justify-center">
-              <h1 className="text-red-600 text-4xl md:text-5xl mt-8 md:mt-14 font-bold">Projects</h1>
+              <h1 className="text-red-600 text-4xl md:text-5xl mt-12 md:mt-20 font-bold">Projects</h1>
             </div>
             <div>
               <Lottie animationData={fireBlow} loop={false} className="absolute bottom-5 left-1/2 -translate-x-1/2 w-60 md:w-[25rem]" />
