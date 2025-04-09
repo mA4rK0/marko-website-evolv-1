@@ -1,4 +1,4 @@
-export default function MobileNavbar({ state, isBorder }) {
+export default function MobileNavbar({ state, isBorder }: { state: any; isBorder: boolean }) {
   return (
     <>
       <section className={`flex items-center text-white transition ease-in-out duration-300 ${isBorder && "border px-2 rounded"}`}>
