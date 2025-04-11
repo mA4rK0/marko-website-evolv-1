@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import ProjectsTextEffect from "@/components/typingEffects/project_section_des";
 import fireBlow from "../../public/fireBlow.json";
+import Projects from "@/ui/grid_projects";
 
 const ProjectsLayout: React.FC = () => {
   const [hideElement, setHideElement] = useState(false);
@@ -18,7 +19,7 @@ const ProjectsLayout: React.FC = () => {
   }, []);
 
   return (
-    <div id="projects" className="relative w-full min-h-screen bg-[#080808]">
+    <div id="projects" className="relative w-full min-h-screen py-20 bg-[#080808]">
       <div
         className={`absolute inset-x-0 top-0 z-10 h-7 bg-gradient-to-b from-red-600/20 to-transparent
         transition-opacity duration-500 ease-in-out ${hideElement ? "opacity-0" : "opacity-100"}`}
@@ -35,7 +36,7 @@ const ProjectsLayout: React.FC = () => {
         <>
           <div className="relative">
             <div className="flex justify-center">
-              <h1 className="text-red-600 text-4xl md:text-5xl mt-20 md:mt-20 font-bold">Projects</h1>
+              <h1 className="text-red-600 text-4xl md:text-5xl font-semibold hover:text-orange-500 drop-shadow-[0_0_6px_rgba(255,80,80,0.5)] animate-pulse">Projects</h1>
             </div>
             <div>
               <Lottie animationData={fireBlow} loop={false} className="absolute bottom-5 left-1/2 -translate-x-1/2 w-60 md:w-[25rem]" />
@@ -46,6 +47,9 @@ const ProjectsLayout: React.FC = () => {
           </div>
         </>
       )}
+      <div className="flex justify-center mt-12">
+        <Projects />
+      </div>
     </div>
   );
 };
