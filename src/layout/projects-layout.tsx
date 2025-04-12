@@ -7,6 +7,7 @@ import Projects from "@/ui/grid_projects";
 
 const ProjectsLayout: React.FC = () => {
   const [hideElement, setHideElement] = useState(false);
+  const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,20 @@ const ProjectsLayout: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (hideElement) {
+      timeout = setTimeout(() => {
+        setShowTitle(true);
+      }, 900);
+    } else {
+      setShowTitle(false);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [hideElement]);
 
   return (
     <div id="projects" className="relative w-full min-h-screen py-20 bg-[#080808]">
@@ -35,21 +50,23 @@ const ProjectsLayout: React.FC = () => {
       {hideElement && (
         <>
           <div className="relative">
-            <div className="flex justify-center">
-              <h1 className="text-red-600 text-4xl md:text-5xl font-semibold hover:text-orange-500 drop-shadow-[0_0_6px_rgba(255,80,80,0.5)] animate-pulse">Projects</h1>
-            </div>
-            <div>
-              <Lottie animationData={fireBlow} loop={false} className="absolute bottom-5 left-1/2 -translate-x-1/2 w-60 md:w-[25rem]" />
+            <div className={`flex justify-center transition-opacity duration-700 ${showTitle ? "opacity-100" : "opacity-0"}`}>
+              <h1 className="text-red-600 text-4xl md:text-5xl font-semibold drop-shadow-[0_0_6px_rgba(255,80,80,0.5)] animate-pulse">Projects</h1>
             </div>
             <div className="flex justify-center mt-7 w-[15rem] mx-auto md:mx-0 md:w-full text-center text-lg md:text-xl">
               <ProjectsTextEffect />
             </div>
+            <div>
+              <Lottie animationData={fireBlow} loop={false} className="absolute md:top-20 left-1/2 -translate-x-1/2 w-[30rem] md:w-[29rem]" />
+            </div>
           </div>
         </>
       )}
-      <div className="flex justify-center mt-12">
-        <Projects />
-      </div>
+      {hideElement && (
+        <div className={`flex justify-center mt-12 transition-opacity duration-700 ${showTitle ? "opacity-100" : "opacity-0"}`}>
+          <Projects />
+        </div>
+      )}
     </div>
   );
 };
