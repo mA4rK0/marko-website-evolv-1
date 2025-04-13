@@ -53,7 +53,7 @@ const ProjectsLayout: React.FC = () => {
             <div className={`flex justify-center transition-opacity duration-700 ${showTitle ? "opacity-100" : "opacity-0"}`}>
               <h1 className="text-red-600 text-4xl md:text-5xl font-semibold drop-shadow-[0_0_6px_rgba(255,80,80,0.5)] animate-pulse">Projects</h1>
             </div>
-            <div className="flex justify-center mt-7 w-[15rem] mx-auto md:mx-0 md:w-full text-center text-lg md:text-xl">
+            <div className="flex justify-center mt-7 w-[18rem] mx-auto md:mx-0 md:w-full text-center text-[1.406rem] md:text-3xl">
               <ProjectsTextEffect />
             </div>
             <div>

@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
           className="flex flex-col items-center justify-center w-full h-44 border-4 border-red-600 rounded-xl text-red-600 hover:shadow-lg hover:scale-105 transition hover:animate-pulse shadow-red-600 cursor-pointer ease-in-out duration-300 relative overflow-hidden"
         >
           <div className="text-red-600 hover:text-orange-400 transition ease-in-out duration-300">{item.icon}</div>
-          <div className="mt-2 font-bold text-center text-xl px-2 z-10 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-300 bg-clip-text text-transparent transition duration-300 transform hover:-translate-y-1 hover:brightness-125">
+          <div className="mt-2 font-bold text-center text-[1.172rem] px-2 z-10 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-300 bg-clip-text text-transparent transition duration-300 transform hover:-translate-y-1 hover:brightness-125">
             {item.label}
           </div>
         </button>
